@@ -23,6 +23,7 @@
     self.ticketNumbers = [NSArray arrayWithObjects:@"3050000", nil];
     self.ticketTimes = [NSArray arrayWithObjects:@"0:00 - 0:00 - 0:00", nil];
     self.ticketNotes = [NSArray arrayWithObjects:@"TEst tes tes tttestttes", nil];
+
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

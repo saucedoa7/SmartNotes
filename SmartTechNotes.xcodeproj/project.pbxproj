@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		506DB1111AF46F2A00993C00 /* NewTicketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 506DB1101AF46F2A00993C00 /* NewTicketViewController.m */; };
 		50A2CA751AF2F8E500A791EF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CA741AF2F8E500A791EF /* main.m */; };
 		50A2CA781AF2F8E500A791EF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CA771AF2F8E500A791EF /* AppDelegate.m */; };
 		50A2CA7B1AF2F8E600A791EF /* SmartTechNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CA791AF2F8E600A791EF /* SmartTechNotes.xcdatamodeld */; };
@@ -16,7 +17,6 @@
 		50A2CA861AF2F8E600A791EF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A2CA841AF2F8E600A791EF /* LaunchScreen.xib */; };
 		50A2CA921AF2F8E600A791EF /* SmartTechNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CA911AF2F8E600A791EF /* SmartTechNotesTests.m */; };
 		50A2CA9D1AF2F99400A791EF /* TicketLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CA9C1AF2F99400A791EF /* TicketLineCell.m */; };
-		50A2CAA11AF2FE9D00A791EF /* TicketTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CAA01AF2FE9D00A791EF /* TicketTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		506DB10F1AF46F2A00993C00 /* NewTicketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewTicketViewController.h; path = ../NewTicketViewController.h; sourceTree = "<group>"; };
+		506DB1101AF46F2A00993C00 /* NewTicketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewTicketViewController.m; path = ../NewTicketViewController.m; sourceTree = "<group>"; };
 		50A2CA6F1AF2F8E500A791EF /* SmartTechNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartTechNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2CA731AF2F8E500A791EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A2CA741AF2F8E500A791EF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,8 +48,6 @@
 		50A2CA911AF2F8E600A791EF /* SmartTechNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartTechNotesTests.m; sourceTree = "<group>"; };
 		50A2CA9B1AF2F99400A791EF /* TicketLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketLineCell.h; sourceTree = "<group>"; };
 		50A2CA9C1AF2F99400A791EF /* TicketLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketLineCell.m; sourceTree = "<group>"; };
-		50A2CA9F1AF2FE9D00A791EF /* TicketTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketTableView.h; sourceTree = "<group>"; };
-		50A2CAA01AF2FE9D00A791EF /* TicketTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +68,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		506DB10E1AF46E7800993C00 /* NewTicketVC */ = {
+			isa = PBXGroup;
+			children = (
+				506DB10F1AF46F2A00993C00 /* NewTicketViewController.h */,
+				506DB1101AF46F2A00993C00 /* NewTicketViewController.m */,
+			);
+			name = NewTicketVC;
+			sourceTree = "<group>";
+		};
 		50A2CA661AF2F8E500A791EF = {
 			isa = PBXGroup;
 			children = (
@@ -89,11 +98,10 @@
 		50A2CA711AF2F8E500A791EF /* SmartTechNotes */ = {
 			isa = PBXGroup;
 			children = (
+				50A2CAA31AF3008B00A791EF /* VC */,
+				506DB10E1AF46E7800993C00 /* NewTicketVC */,
 				50A2CA761AF2F8E500A791EF /* AppDelegate.h */,
 				50A2CA771AF2F8E500A791EF /* AppDelegate.m */,
-				50A2CAA31AF3008B00A791EF /* VC */,
-				50A2CAA21AF3007300A791EF /* TicketTableView */,
-				50A2CA9E1AF2F9AB00A791EF /* TicketLineCell */,
 				50A2CA821AF2F8E600A791EF /* Images.xcassets */,
 				50A2CA7F1AF2F8E600A791EF /* Main.storyboard */,
 				50A2CA841AF2F8E600A791EF /* LaunchScreen.xib */,
@@ -138,20 +146,12 @@
 			name = TicketLineCell;
 			sourceTree = "<group>";
 		};
-		50A2CAA21AF3007300A791EF /* TicketTableView */ = {
-			isa = PBXGroup;
-			children = (
-				50A2CA9F1AF2FE9D00A791EF /* TicketTableView.h */,
-				50A2CAA01AF2FE9D00A791EF /* TicketTableView.m */,
-			);
-			name = TicketTableView;
-			sourceTree = "<group>";
-		};
 		50A2CAA31AF3008B00A791EF /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				50A2CA7C1AF2F8E600A791EF /* ViewController.h */,
 				50A2CA7D1AF2F8E600A791EF /* ViewController.m */,
+				50A2CA9E1AF2F9AB00A791EF /* TicketLineCell */,
 			);
 			name = VC;
 			sourceTree = "<group>";
@@ -257,7 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A2CA9D1AF2F99400A791EF /* TicketLineCell.m in Sources */,
-				50A2CAA11AF2FE9D00A791EF /* TicketTableView.m in Sources */,
+				506DB1111AF46F2A00993C00 /* NewTicketViewController.m in Sources */,
 				50A2CA7B1AF2F8E600A791EF /* SmartTechNotes.xcdatamodeld in Sources */,
 				50A2CA781AF2F8E500A791EF /* AppDelegate.m in Sources */,
 				50A2CA7E1AF2F8E600A791EF /* ViewController.m in Sources */,
@@ -456,6 +456,7 @@
 				50A2CA971AF2F8E600A791EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		50A2CA981AF2F8E600A791EF /* Build configuration list for PBXNativeTarget "SmartTechNotesTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +465,7 @@
 				50A2CA9A1AF2F8E600A791EF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
