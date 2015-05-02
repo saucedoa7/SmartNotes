@@ -15,6 +15,8 @@
 		50A2CA831AF2F8E600A791EF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50A2CA821AF2F8E600A791EF /* Images.xcassets */; };
 		50A2CA861AF2F8E600A791EF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A2CA841AF2F8E600A791EF /* LaunchScreen.xib */; };
 		50A2CA921AF2F8E600A791EF /* SmartTechNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CA911AF2F8E600A791EF /* SmartTechNotesTests.m */; };
+		50A2CA9D1AF2F99400A791EF /* TicketLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CA9C1AF2F99400A791EF /* TicketLineCell.m */; };
+		50A2CAA11AF2FE9D00A791EF /* TicketTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50A2CAA01AF2FE9D00A791EF /* TicketTableView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,10 @@
 		50A2CA8B1AF2F8E600A791EF /* SmartTechNotesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartTechNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50A2CA901AF2F8E600A791EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50A2CA911AF2F8E600A791EF /* SmartTechNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmartTechNotesTests.m; sourceTree = "<group>"; };
+		50A2CA9B1AF2F99400A791EF /* TicketLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketLineCell.h; sourceTree = "<group>"; };
+		50A2CA9C1AF2F99400A791EF /* TicketLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketLineCell.m; sourceTree = "<group>"; };
+		50A2CA9F1AF2FE9D00A791EF /* TicketTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TicketTableView.h; sourceTree = "<group>"; };
+		50A2CAA01AF2FE9D00A791EF /* TicketTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TicketTableView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +91,11 @@
 			children = (
 				50A2CA761AF2F8E500A791EF /* AppDelegate.h */,
 				50A2CA771AF2F8E500A791EF /* AppDelegate.m */,
-				50A2CA7C1AF2F8E600A791EF /* ViewController.h */,
-				50A2CA7D1AF2F8E600A791EF /* ViewController.m */,
-				50A2CA7F1AF2F8E600A791EF /* Main.storyboard */,
+				50A2CAA31AF3008B00A791EF /* VC */,
+				50A2CAA21AF3007300A791EF /* TicketTableView */,
+				50A2CA9E1AF2F9AB00A791EF /* TicketLineCell */,
 				50A2CA821AF2F8E600A791EF /* Images.xcassets */,
+				50A2CA7F1AF2F8E600A791EF /* Main.storyboard */,
 				50A2CA841AF2F8E600A791EF /* LaunchScreen.xib */,
 				50A2CA791AF2F8E600A791EF /* SmartTechNotes.xcdatamodeld */,
 				50A2CA721AF2F8E500A791EF /* Supporting Files */,
@@ -120,6 +127,33 @@
 				50A2CA901AF2F8E600A791EF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		50A2CA9E1AF2F9AB00A791EF /* TicketLineCell */ = {
+			isa = PBXGroup;
+			children = (
+				50A2CA9B1AF2F99400A791EF /* TicketLineCell.h */,
+				50A2CA9C1AF2F99400A791EF /* TicketLineCell.m */,
+			);
+			name = TicketLineCell;
+			sourceTree = "<group>";
+		};
+		50A2CAA21AF3007300A791EF /* TicketTableView */ = {
+			isa = PBXGroup;
+			children = (
+				50A2CA9F1AF2FE9D00A791EF /* TicketTableView.h */,
+				50A2CAA01AF2FE9D00A791EF /* TicketTableView.m */,
+			);
+			name = TicketTableView;
+			sourceTree = "<group>";
+		};
+		50A2CAA31AF3008B00A791EF /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				50A2CA7C1AF2F8E600A791EF /* ViewController.h */,
+				50A2CA7D1AF2F8E600A791EF /* ViewController.m */,
+			);
+			name = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A2CA9D1AF2F99400A791EF /* TicketLineCell.m in Sources */,
+				50A2CAA11AF2FE9D00A791EF /* TicketTableView.m in Sources */,
 				50A2CA7B1AF2F8E600A791EF /* SmartTechNotes.xcdatamodeld in Sources */,
 				50A2CA781AF2F8E500A791EF /* AppDelegate.m in Sources */,
 				50A2CA7E1AF2F8E600A791EF /* ViewController.m in Sources */,

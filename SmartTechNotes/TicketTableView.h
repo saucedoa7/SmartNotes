@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TicketTableView.h
 //  SmartTechNotes
 //
 //  Created by Albert Saucedo on 4/30/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
-
+@interface TicketTableView : UITableView 
 
 @end
-

@@ -7,16 +7,39 @@
 //
 
 #import "ViewController.h"
+#import "TicketLineCell.h"
 
 @interface ViewController ()
-
+@property NSArray *ticketNumbers;
+@property NSArray *ticketTimes;
+@property NSArray *ticketNotes;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.ticketNumbers = [NSArray arrayWithObjects:@"3050000", nil];
+    self.ticketTimes = [NSArray arrayWithObjects:@"0:00 - 0:00 - 0:00", nil];
+    self.ticketNotes = [NSArray arrayWithObjects:@"TEst tes tes tttestttes", nil];
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.ticketNumbers count];;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    TicketLineCell *ticketCell = [tableView dequeueReusableCellWithIdentifier:@"cellID" forIndexPath:indexPath];
+
+    NSInteger row = [indexPath row];
+
+    ticketCell.lblTicketNumber.text = self.ticketNumbers [row];
+    ticketCell.lblTicketTime.text = self.ticketTimes [row];
+    ticketCell.lblTicketNotes.text = self.ticketNotes [row];
+
+    return ticketCell;
 }
 
 - (void)didReceiveMemoryWarning {
