@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewTicketViewController.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NewTicketVCDelegate>
 @property (strong, nonatomic) IBOutlet UINavigationItem *naviItem;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 
 @end

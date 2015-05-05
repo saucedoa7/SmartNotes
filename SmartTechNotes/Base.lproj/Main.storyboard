@@ -32,7 +32,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="113" y="0.0" width="133" height="21"/>
+                                                        <rect key="frame" x="113" y="0.0" width="254" height="21"/>
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test tes test testt ttttetst test tets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9M-fq-hny">
@@ -109,6 +109,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="naviItem" destination="9yt-me-1r7" id="oyq-6h-Mgj"/>
+                        <outlet property="tableView" destination="0eq-yw-lWT" id="4YC-zm-A9Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -170,12 +171,12 @@
                                     <rect key="frame" x="271" y="91" width="88" height="21"/>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g8-83-Zpr">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, coreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." translatesAutoresizingMaskIntoConstraints="NO" id="0g8-83-Zpr">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda. Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="16" y="164" width="343" height="270"/>
                                 </variation>
@@ -207,6 +208,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="615" width="117" height="44"/>
                                 </variation>
+                                <connections>
+                                    <action selector="didCancel:" destination="laN-gN-4gR" eventType="touchUpInside" id="H67-cb-KFe"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lxw-lZ-Spd">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -218,6 +222,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="271" y="615" width="88" height="44"/>
                                 </variation>
+                                <connections>
+                                    <action selector="addTicket:" destination="laN-gN-4gR" eventType="touchUpInside" id="4LA-s6-8vk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sv9-sb-OPX">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -299,6 +306,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="doneBtn" destination="lxw-lZ-Spd" id="bfV-rO-wqC"/>
                         <outlet property="txtNotes" destination="0g8-83-Zpr" id="Dih-Yh-kuq"/>
                         <outlet property="txtPartNumber" destination="wk5-DK-Uvd" id="yl4-QY-Hvh"/>
                         <outlet property="txtTicketNumber" destination="YI1-IG-c6W" id="gnj-0t-tty"/>

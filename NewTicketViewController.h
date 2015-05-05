@@ -7,23 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TicketLineCell.h"
+@protocol NewTicketVCDelegate <NSObject>
+
+@required
+-(void)addNewTicket:(TicketLineCell *)ticket;
+
+@end
 
 @interface NewTicketViewController : UIViewController
+@property (weak, nonatomic) id <NewTicketVCDelegate> delegate;
+
 @property (strong, nonatomic) IBOutlet UITextField *txtTicketNumber;
 @property (strong, nonatomic) IBOutlet UITextField *txtPartNumber;
 
 @property (strong, nonatomic) IBOutlet UITextView *txtNotes;
-
-@property (strong, nonatomic) IBOutlet UILabel *lblDeparted;
-@property (strong, nonatomic) IBOutlet UILabel *lblArrived;
-@property (strong, nonatomic) IBOutlet UILabel *lblCompleted;
 
 @property (strong, nonatomic) NSString *date;
 
 - (IBAction)btnDeparted:(UIButton *)sender;
 - (IBAction)btnArrived:(UIButton *)sender;
 - (IBAction)btnCompleted:(UIButton *)sender;
+- (IBAction)didCancel:(UIButton *)sender;
+- (IBAction)addTicket:(UIButton *)sender;
 
+@property (strong, nonatomic) IBOutlet UIButton *doneBtn;
+
+@property (strong, nonatomic) NSString *departedText;
+@property (strong, nonatomic) NSString *arrivedText;
+@property (strong, nonatomic) NSString *completedText;
+
+@property (strong, nonatomic) NSMutableArray *times;
 @end
 
 

@@ -13,4 +13,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblTicketTime;
 @property (strong, nonatomic) IBOutlet UILabel *lblTicketNotes;
 
+@property (strong, nonatomic) NSString *ticketNumber;
+@property (strong, nonatomic) NSString *ticketTime;
+@property (strong, nonatomic) NSString *ticketNotes;
 @end
