@@ -18,16 +18,15 @@
 
 @implementation ViewController
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.ticketNumbers = [NSMutableArray arrayWithObjects:@"3050000", nil];
-    self.ticketTimes = [NSMutableArray arrayWithObjects:@"0:00 - 0:00 - 0:00", nil];
-    self.ticketNotes = [NSMutableArray arrayWithObjects:@"TEst tes tes tttestttes", nil];
-
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [self loadData];
     NSLog(@"VC VDLoad %@ %@ %@", self.ticketNumbers, self.ticketTimes, self.ticketNotes);
 }
 
@@ -45,9 +44,6 @@
     ticketCell.lblTicketTime.text = self.ticketTimes [row];
     ticketCell.lblTicketNotes.text = self.ticketNotes [row];
 
-
-
-
     return ticketCell;
 }
 
@@ -55,6 +51,8 @@
     NewTicketViewController *ticket = segue.destinationViewController;
     ticket.delegate = self;
 }
+
+#pragma mark Helpers
 
 -(void)addNewTicket:(TicketLineCell *)ticket{
 
@@ -64,17 +62,26 @@
         self.ticketTimes = [NSMutableArray new];
     }
 
-    NSLog(@"le Ticket %@", ticket.ticketNumber);
-
     [self.ticketNumbers addObject:ticket.ticketNumber];
     [self.ticketTimes addObject:ticket.ticketTime];
     [self.ticketNotes addObject:ticket.ticketNotes];
 
-    NSLog(@"VC Ticket Numbers, %@", self.ticketNumbers);
-    NSLog(@"VC Ticket Times, %@", self.ticketTimes);
-    NSLog(@"VC Ticket Notes, %@", self.ticketNotes);
-
     [self.tableView reloadData];
+    [self saveData];
+}
 
+-(void)saveData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.ticketNumbers forKey:TICKET_NUMBERS];
+    [userDefaults setObject:self.ticketTimes forKey:TICKET_TIMES];
+    [userDefaults setObject:self.ticketNotes forKey:TICKET_NOTES];
+    [userDefaults synchronize];
+}
+
+-(void)loadData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.ticketTimes = [[userDefaults objectForKey:TICKET_TIMES] mutableCopy];
+    self.ticketNumbers = [[userDefaults objectForKey:TICKET_NUMBERS] mutableCopy];
+    self.ticketNotes = [[userDefaults objectForKey:TICKET_NOTES] mutableCopy];
 }
 @end

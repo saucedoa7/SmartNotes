@@ -10,6 +10,11 @@
 #import "NewTicketViewController.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NewTicketVCDelegate>
+
+#define TICKET_NUMBERS @"Ticket Numbers"
+#define TICKET_TIMES @"Ticket Times"
+#define TICKET_NOTES @"Ticket Notes"
+
 @property (strong, nonatomic) IBOutlet UINavigationItem *naviItem;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 

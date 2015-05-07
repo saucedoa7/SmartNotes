@@ -74,6 +74,7 @@
                                             <outlet property="lblTicketNotes" destination="m9M-fq-hny" id="SSV-pC-XTs"/>
                                             <outlet property="lblTicketNumber" destination="tbB-f4-e9b" id="oiB-k8-hVm"/>
                                             <outlet property="lblTicketTime" destination="mqe-Tw-aJX" id="3Mw-XL-uQY"/>
+                                            <segue destination="laN-gN-4gR" kind="presentation" id="xd9-UN-cjZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -141,7 +142,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.59999999999999998" green="0.15686274509803921" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="91" width="375" height="21"/>
+                                    <rect key="frame" x="0.0" y="99" width="375" height="21"/>
                                 </variation>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xN-CA-rdy">
@@ -150,7 +151,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="91" width="88" height="21"/>
+                                    <rect key="frame" x="16" y="99" width="88" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Arrived" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P8a-x2-GlB">
@@ -159,7 +160,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="143" y="91" width="88" height="21"/>
+                                    <rect key="frame" x="143" y="99" width="88" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GwK-uY-ghx">
@@ -168,7 +169,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="271" y="91" width="88" height="21"/>
+                                    <rect key="frame" x="271" y="99" width="88" height="21"/>
                                 </variation>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Lorem ipsum dolor sit er elit lamet, coreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla." translatesAutoresizingMaskIntoConstraints="NO" id="0g8-83-Zpr">
@@ -178,7 +179,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="yes" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="164" width="343" height="270"/>
+                                    <rect key="frame" x="16" y="172" width="343" height="270"/>
                                 </variation>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Part #" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VJT-o4-Yeo">
@@ -187,7 +188,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="460" width="102" height="44"/>
+                                    <rect key="frame" x="16" y="456" width="102" height="44"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="xxxxxxx" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wk5-DK-Uvd">
@@ -195,7 +196,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="149" y="454" width="192" height="55"/>
+                                    <rect key="frame" x="149" y="450" width="192" height="55"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aVx-oR-7MG">
@@ -234,7 +235,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="143" y="115" width="88" height="44"/>
+                                    <rect key="frame" x="143" y="123" width="88" height="44"/>
                                 </variation>
                                 <connections>
                                     <action selector="btnArrived:" destination="laN-gN-4gR" eventType="touchUpInside" id="SE1-5F-dVR"/>
@@ -248,7 +249,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="271" y="115" width="88" height="44"/>
+                                    <rect key="frame" x="271" y="123" width="88" height="44"/>
                                 </variation>
                                 <connections>
                                     <action selector="btnCompleted:" destination="laN-gN-4gR" eventType="touchUpInside" id="7N3-sy-x3i"/>
@@ -262,12 +263,21 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="115" width="88" height="44"/>
+                                    <rect key="frame" x="16" y="123" width="88" height="44"/>
                                 </variation>
                                 <connections>
                                     <action selector="btnDeparted:" destination="laN-gN-4gR" eventType="touchUpInside" id="IfJ-pe-8LY"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TimeStamp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-lj-yRc">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="279" y="81" width="96" height="21"/>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.80952380952380953" green="0.80952380952380953" blue="0.80952380952380953" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
@@ -285,6 +295,7 @@
                                 <exclude reference="sv9-sb-OPX"/>
                                 <exclude reference="cIa-Ph-uwX"/>
                                 <exclude reference="Ypc-S2-uvh"/>
+                                <exclude reference="IJd-lj-yRc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -302,11 +313,14 @@
                                 <include reference="sv9-sb-OPX"/>
                                 <include reference="cIa-Ph-uwX"/>
                                 <include reference="Ypc-S2-uvh"/>
+                                <include reference="IJd-lj-yRc"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="doneBtn" destination="lxw-lZ-Spd" id="bfV-rO-wqC"/>
+                        <outlet property="lblPartNumebr" destination="VJT-o4-Yeo" id="NHY-Zs-tr9"/>
+                        <outlet property="lblTimeStamp" destination="IJd-lj-yRc" id="p6a-qy-vp1"/>
                         <outlet property="txtNotes" destination="0g8-83-Zpr" id="Dih-Yh-kuq"/>
                         <outlet property="txtPartNumber" destination="wk5-DK-Uvd" id="yl4-QY-Hvh"/>
                         <outlet property="txtTicketNumber" destination="YI1-IG-c6W" id="gnj-0t-tty"/>
@@ -314,7 +328,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Vl-kS-S4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124.25" y="451.5"/>
+            <point key="canvasLocation" x="1859.25" y="-366.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gT3-m6-dY2">
@@ -336,4 +350,7 @@
             <point key="canvasLocation" x="413.25" y="-366.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2X3-hc-fNg"/>
+    </inferredMetricsTieBreakers>
 </document>

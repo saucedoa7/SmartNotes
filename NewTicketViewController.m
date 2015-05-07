@@ -35,6 +35,7 @@
     self.textField.delegate = self;
 
     [self checkToDisableDone];
+    [self returnTimeStamp];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
@@ -48,6 +49,15 @@
     self.date = [dateFormatter stringFromDate:currDate];
 
     return self.date;
+}
+
+-(NSString *)returnTimeStamp{
+    NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:@"MM/dd/yyyy"];
+    self.lblTimeStamp.text = [dateFormatter stringFromDate:currDate];
+
+    return self.lblTimeStamp.text;
 }
 
 -(void) returnKB{
@@ -102,7 +112,6 @@
 
 
     [self dismissViewControllerAnimated:YES completion:nil];
-
     [self checkToDisableDone];
 }
 
@@ -148,7 +157,7 @@
 
     if ([self.txtPartNumber isEditing]) {
         [UIView animateWithDuration:.3 animations:^{
-
+            self.lblPartNumebr.text = @"Done";
             self.view.transform = CGAffineTransformMakeTranslation(0, -90);
 
         } completion:^(BOOL finished) {
@@ -158,15 +167,47 @@
 }
 
 -(void)KBDidHide{
+    self.lblPartNumebr.text = @"Part #";
 
     if (![self.txtPartNumber isEditing]) {
-        [UIView animateWithDuration:.3 animations:^{
 
+        [UIView animateWithDuration:.3 animations:^{
+            self.lblPartNumebr.text = @"Part #";
             self.view.transform = CGAffineTransformMakeTranslation(0, 0);
             
         } completion:^(BOOL finished) {
             nil;
         }];
     }
+}
+
+-(void)saveData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:self.number forKey:TICKET_NUMBER];
+    [userDefaults setObject:self.partNumber forKey:TICKET_PART_NUMBER];
+    [userDefaults setObject:self.departedText forKey:TICKET_DEPARTED_TIME];
+    [userDefaults setObject:self.arrivedText forKey:TICKET_ARRIVED_TIME];
+    [userDefaults setObject:self.completedText forKey:TICKET_COMPLETED_TIME];
+    [userDefaults setObject:self.date forKey:TICKET_DATE];
+    [userDefaults setObject:self.timeStamp forKey:TICKET_TIMESTAMP];
+    [userDefaults setObject:self.notes forKey:TICKET_NOTE];
+
+    [userDefaults setObject:self.times forKey:TICKET_TIMES];
+
+    [userDefaults synchronize];
+}
+
+-(void)loadData{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    self.times = [[userDefaults objectForKey:TICKET_TIMES] mutableCopy];
+
+    self.number = [userDefaults objectForKey:TICKET_NUMBER] ;
+    self.partNumber = [userDefaults objectForKey:TICKET_PART_NUMBER] ;
+    self.departedText = [userDefaults objectForKey:TICKET_DEPARTED_TIME] ;
+    self.arrivedText = [userDefaults objectForKey:TICKET_ARRIVED_TIME] ;
+    self.completedText = [userDefaults objectForKey:TICKET_COMPLETED_TIME] ;
+    self.date = [userDefaults objectForKey:TICKET_DATE] ;
+    self.timeStamp = [userDefaults objectForKey:TICKET_TIMESTAMP] ;
+    self.notes = [userDefaults objectForKey:TICKET_NOTE] ;
 }
 @end
