@@ -15,6 +15,7 @@
 
 @required
 -(void)addNewTicket:(TicketLineCell *)ticket;
+-(void)createTicket:(id)ticket;
 @end
 
 @interface NewTicketViewController : UIViewController

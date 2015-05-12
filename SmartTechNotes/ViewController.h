@@ -15,8 +15,12 @@
 #define TICKET_TIMES @"Ticket Times"
 #define TICKET_NOTES @"Ticket Notes"
 
+#define NEW_TICKET_KEY @"New Ticket Key"
+
 @property (strong, nonatomic) IBOutlet UINavigationItem *naviItem;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) NewTicketViewController *passSelectedTicket;
 
 
 @end

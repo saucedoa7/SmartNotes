@@ -18,9 +18,6 @@
 
 @implementation ViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
@@ -49,6 +46,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NewTicketViewController *ticket = segue.destinationViewController;
+    ticket.txtTicketNumber.text = self.passSelectedTicket.number;
+
+    NSLog(@"Passing Data %@", ticket);
+
     ticket.delegate = self;
 }
 
@@ -62,12 +63,47 @@
         self.ticketTimes = [NSMutableArray new];
     }
 
-    [self.ticketNumbers addObject:ticket.ticketNumber];
-    [self.ticketTimes addObject:ticket.ticketTime];
-    [self.ticketNotes addObject:ticket.ticketNotes];
+    [self.ticketNumbers addObject:ticket.number];
+    [self.ticketTimes addObject:ticket.time];
+    [self.ticketNotes addObject:ticket.notes];
 
     [self.tableView reloadData];
     [self saveData];
+}
+
+-(void)createTicket:(id)ticket{
+    NewTicketViewController *newTicket = ticket;
+    self.passSelectedTicket = newTicket;
+    NSLog(@"2nd delegate %@", newTicket);
+
+    [self ticketObjectAsPropertyList:newTicket];
+}
+
+-(NSDictionary *)ticketObjectAsPropertyList:(NewTicketViewController *)newTicket{
+
+    NSLog(@"TicketObjectAsProp %@", newTicket.arrivedText);
+
+    NSDictionary *dictionary = @{TICKET_NUMBER : newTicket.number,
+                                 TICKET_ARRIVED_TIME : newTicket.arrivedText,
+                                 TICKET_DEPARTED_TIME : newTicket.departedText,
+                                 TICKET_COMPLETED_TIME : newTicket.completedText,
+                                 TICKET_NOTE : newTicket.notes,
+                                 TICKET_DATE : newTicket.date,
+                                 TICKET_PART_NUMBER : newTicket.partNumber,
+                                 TICKET_TIMESTAMP : newTicket.timeStamp};
+
+    NSLog(@"Ticket Dictionary %@", dictionary);
+
+    NSMutableArray *newTicketsAsPropertyLists = [[[NSUserDefaults standardUserDefaults] arrayForKey:NEW_TICKET_KEY] mutableCopy];
+
+    if (!newTicketsAsPropertyLists) {
+        newTicketsAsPropertyLists = [NSMutableArray new];
+    }
+
+    [[NSUserDefaults standardUserDefaults] setObject:newTicketsAsPropertyLists forKey:NEW_TICKET_KEY];
+    [[NSUserDefaults  standardUserDefaults] synchronize];
+
+    return dictionary;
 }
 
 -(void)saveData{

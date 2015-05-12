@@ -105,35 +105,51 @@
 
 - (IBAction)addTicket:(UIButton *)sender {
 
-    TicketLineCell *ticket = [self retuenTicketCell];
+    NewTicketViewController *newTicket = [self returnNewTicket];
+    [self.delegate createTicket:newTicket];
 
-    NSLog(@"Ticket %@", ticket.lblTicketNotes.text);
-    [self.delegate addNewTicket:ticket];
-
+    TicketLineCell *cellLine = [self retuenTicketCell:newTicket];
+    [self.delegate addNewTicket:cellLine];
 
     [self dismissViewControllerAnimated:YES completion:nil];
     [self checkToDisableDone];
 }
 
--(TicketLineCell *)retuenTicketCell{
+-(TicketLineCell *)retuenTicketCell:(NewTicketViewController *)newTicket{
 
-    if (self.arrivedText == nil) {
-        self.arrivedText  = @"0:00";
+    if (newTicket.arrivedText == nil) {
+        newTicket.arrivedText  = @"0:00";
     }
 
-    if (self.completedText == nil) {
-        self.completedText = @"0:00";
+    if (newTicket.completedText == nil) {
+        newTicket.completedText = @"0:00";
     }
 
-    NSString *timeDuration  = [NSString stringWithFormat:@"%@ - %@ - %@", self.departedText, self.arrivedText, self.completedText];
+    NSString *timeDuration  = [NSString stringWithFormat:@"%@ - %@ - %@", newTicket.departedText, newTicket.arrivedText, newTicket.completedText];
 
     TicketLineCell *ticketCell = [TicketLineCell new];
-    ticketCell.ticketTime = timeDuration;
-    ticketCell.ticketNumber = self.txtTicketNumber.text;
-    ticketCell.ticketNotes = self.txtNotes.text;
+    ticketCell.time = timeDuration;
+    ticketCell.number = newTicket.number;
+    ticketCell.notes = newTicket.notes;
 
     return ticketCell;
 }
+
+-(NewTicketViewController *)returnNewTicket{
+    NewTicketViewController *ticket = [NewTicketViewController new];
+
+    ticket.number = self.txtTicketNumber.text;
+    ticket.departedText = self.departedText;
+    ticket.arrivedText = self.arrivedText;
+    ticket.completedText = self.completedText;
+    ticket.notes = self.txtNotes.text;
+    ticket.partNumber = self.txtPartNumber.text;
+    ticket.timeStamp = self.lblTimeStamp.text;
+    ticket.date = self.date;
+
+    return ticket;
+}
+
 
 -(void)checkToDisableDone{
 
@@ -142,8 +158,6 @@
                   self.completedText,
                   self.txtTicketNumber.text,
                   self.txtNotes.text, nil];
-
-    NSLog(@"%@", self.times);
 
     if ([self.times count] == 0) {
         NSLog(@"Nothing in times array");
@@ -174,7 +188,7 @@
         [UIView animateWithDuration:.3 animations:^{
             self.lblPartNumebr.text = @"Part #";
             self.view.transform = CGAffineTransformMakeTranslation(0, 0);
-            
+
         } completion:^(BOOL finished) {
             nil;
         }];
